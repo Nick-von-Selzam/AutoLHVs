@@ -1,0 +1,35 @@
+Figure 5 a: Deviations for local states and different number of spins 
+
+"Product states" means |psi> = |up>...|up>
+"Noisy GHZ states" means rho = v * |GHZ><GHZ| + (1-v) * maximally_mixed_state, v = 1e-3
+
+Measurement rule: Spherical harmonics up to degree D=5
+N_hidden = 2^14
+N_measures = 2^10
+N_measures_test = 2^14
+N_steps = 3e6 + N_steps_ft
+N_steps_ft = 1e3
+learning_rate = 1e-5 * N_hidden
+
+----------
+
+Figure 5 b: Hidden state distribution for single spin states
+
+|psi> = |up>:
+Measurement rule: Bell's measurement rule (Spherical harmonics w/ D=1)
+N_hidden = 2^12
+N_measures = 2^10
+N_measures_test = 2^14
+N_steps = 1e5 + N_steps_ft
+N_steps_ft = 1e3
+learning_rate = 1e-5 * N_hidden
+
+rho = rho(1/2, 0, 0):
+Measurement rule: Bell's measurement rule (Spherical harmonics w/ D=1)
+N_hidden = 2^12
+N_measures = 2^10
+N_measures_test = 2^14
+N_steps = 2e4 + N_steps_ft
+N_steps_noise = 1e4 (train with diffusion steps)
+N_steps_ft = 1e3
+learning_rate = 1e-5 * N_hidden
