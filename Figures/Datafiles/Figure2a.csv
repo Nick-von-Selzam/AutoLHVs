@@ -1,7 +1,7 @@
 Loss progressions during optimization for selected 2-spin Werner states
 
 The steps ranges below ("range" is python code here) indicate the full step ranges corresponding to the data shown in the plot.
-In this file we cut off at 10^5 steps (steps = range(9, 10**5, 10)) too keep the file size smaller.
+In this file we cut off at 10^5 steps (steps = range(9, 10**4, 10)) too keep the file size smaller.
 
 
 ----------
