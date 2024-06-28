@@ -36,4 +36,4 @@ scipy (1.12.0)
 matplotlib (3.8.0)
 
 
-For the full package lists (pip and conda) see the text files in the "Package" folder.
+For the full package lists (pip and conda) see the text files in the "Packages" folder.
