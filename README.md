@@ -1,6 +1,7 @@
 # AutoLHVs
 
-Paper title: ## Optimizing Local Hidden-Variable Models for Quantum Many-Body States
+Paper title: 
+## Optimizing Local Hidden-Variable Models for Quantum Many-Body States
 
 ArXiv link: 
 
