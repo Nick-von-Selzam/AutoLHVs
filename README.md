@@ -1,27 +1,15 @@
 # AutoLHVs
 
-### Optimizing Local Hidden-Variable Models for Quantum Many-Body States
+### Discovering Local Hidden-Variable Models for Arbitrary Multipartite Entangled States and Arbitrary Measurements
 
-ArXiv link: 
+ArXiv (coming soon)
 
 Abstract:
 
-Measurement correlations in quantum systems can exhibit non-local behavior, a fundamental
-aspect of quantum mechanics with applications such as device-independent quantum information
-processing. However, the understanding of non-locality remains limited, particularly in the context
-of measurements with an infinite number of possible settings (e.g., all projective measurements) and
-many-body systems. To address this, we developed a machine learning algorithm which optimizes
-local hidden-variable (LHV) models to reproduce the measurement statistics of many-body states.
-Our method efficiently produces LHV models for projective measurements of spin-1/2 systems, and
-provides estimates for the critical visibilities of two-qubit Werner and noisy three-qubit GHZ and W
-states. We find evidence suggesting that two-qubit subsystems in the ground states of translationally
-invariant local Hamiltonians are local, while bigger subsystems are in general not. Our approach
-offers a tool for studying non-locality in all kinds of situations, such as ground states, thermal states,
-non-equilibrium states and states subject to different types of noise.
+Measurement correlations in quantum systems can exhibit non-local behavior, a fundamental aspect of quantum mechanics with applications such as device-independent quantum information processing. However, the explicit  construction of local hidden-variable (LHV) models remains an outstanding challenge in the general setting. To address this, we develop an approach that employs gradient-descent algorithms from machine learning to find LHV models which reproduce the statistics of arbitrary measurements for quantum many-body states. In contrast to previous approaches, our method employs a general ansatz, enabling it to discover an LHV model in all cases where the state is local. Therefore, it provides actual estimates for the critical noise levels at which two-qubit Werner states and three-qubit GHZ and W states become non-local. Furthermore, we find evidence suggesting that two-spin subsystems in the ground states of translationally invariant Hamiltonians are local, while bigger subsystems are in general not. Our method now offers a quantitative tool for determining the regimes of non-locality in any given physical context, including scenarios involving non-equilibrium and decoherence. 
 
 --------------------------------------------------
 
-This repository includes the code, figures and datafiles for the paper above.
 The "Examples.ipynb" notebook shows how to easily apply the algorithm and optimize local hidden-variable (LHV) models for any desired state.
 
 We use Python (version 3.12.1) and specifically JAX (version 0.4.24). Otherwise we need:
@@ -39,5 +27,3 @@ For the full package lists (pip and conda) see the text files in the "Packages" 
 
 
 The code, (c) Nick von Selzam 2024, can be used under MIT license.
-
-Please contact me via e-mail in case you are interested in using the figures.
