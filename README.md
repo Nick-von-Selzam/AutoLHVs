@@ -2,7 +2,7 @@
 
 ### Discovering Local Hidden-Variable Models for Arbitrary Multipartite Entangled States and Arbitrary Measurements
 
-ArXiv (coming soon)
+[ArXiv](https://arxiv.org/abs/2407.04673)
 
 Abstract:
 
