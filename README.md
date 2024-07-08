@@ -27,7 +27,7 @@ scipy (1.12.0)
 matplotlib (3.8.0)
 
 
-For the full package lists (pip and conda) see the text files in the "Packages" folder.
+For the full package lists (pip and conda) see the text files in the [Packages](Packages) folder.
 
 
 The code, (c) Nick von Selzam 2024, can be used under MIT license.
