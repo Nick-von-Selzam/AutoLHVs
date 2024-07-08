@@ -14,7 +14,7 @@ Measurement correlations in quantum systems can exhibit non-local behavior, a fu
 
 --------------------------------------------------
 
-The "Examples.ipynb" notebook shows how to easily apply the algorithm and optimize local hidden-variable (LHV) models for any desired state.
+The [Examples](Code/Examples.ipynb) notebook shows how to easily apply the algorithm and optimize local hidden-variable (LHV) models for any desired state.
 
 We use Python (version 3.12.1) and specifically JAX (version 0.4.24). Otherwise we need:
 
