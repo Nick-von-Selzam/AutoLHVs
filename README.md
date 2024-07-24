@@ -10,8 +10,8 @@ Measurement correlations in quantum systems can exhibit non-local behavior, a fu
 
 --------------------------------------------------
 
-[![image]([./AutoLHVs/images/GitHub_image.jpeg](https://github.com/Nick-von-Selzam/AutoLHVs/blob/main/Images/GitHub_image.jpeg))
-](https://github.com/Nick-von-Selzam/AutoLHVs/blob/main/Images/GitHub_image.jpeg)
+![image](https://github.com/Nick-von-Selzam/AutoLHVs/blob/main/Images/GitHub_image.jpeg)
+
 --------------------------------------------------
 
 The [Examples](Code/Examples.ipynb) notebook shows how to easily apply the algorithm and optimize local hidden-variable (LHV) models for any desired state.
