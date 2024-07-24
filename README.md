@@ -10,7 +10,7 @@ Measurement correlations in quantum systems can exhibit non-local behavior, a fu
 
 --------------------------------------------------
 
-![image](https://github.com/Nick-von-Selzam/AutoLHVs/assets/66438106/ca746035-1eab-4f7d-9373-96aae1586ed0)
+[GitHub_teaser.pdf](https://github.com/user-attachments/files/16366284/GitHub_teaser.pdf)
 
 --------------------------------------------------
 
