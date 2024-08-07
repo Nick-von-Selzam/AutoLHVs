@@ -22,7 +22,7 @@ optax (0.1.9)
 
 numpy (1.26.3)
 
-scipy (1.12.0)
+sympy (1.12.0)
 
 matplotlib (3.8.0)
 
