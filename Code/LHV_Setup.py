@@ -162,7 +162,7 @@ def make_func(expr):
   f = sym.lambdify([x, y, z], expr, 'jax')
   return f
 
-def PLHV_sh(D):
+def PLHV_sh(D): # creates spherical harmonics measurement rule
     hidden_dim = int(jnp.sum(2*jnp.arange(1, D+1, 2)+1).item())
     Sph_expr = spherical_harmonics_expr(D)
     Sph_funcs = [make_func(expr) for expr in Sph_expr]
@@ -207,25 +207,35 @@ def PLHV_spherical_harmonics_planar():
 
 # All odd polynomials up to arbitrary degree:
 
-# All combinations of 3 natural numbers summing to "degree"
-def powers(degree): 
-    combos = jnp.array(jnp.meshgrid(*jnp.outer(jnp.ones(3, dtype=int), jnp.arange(degree+1, dtype=int)), indexing='ij'))
-    combos = jnp.moveaxis(combos, (0,), (-1,))
-    combos = jnp.reshape(combos, ((degree+1)**3, 3))
-    indices = jnp.where(jnp.sum(combos, axis=-1)==degree)
-    return combos[indices]
+# generate d-tuples of non-negative integers summing to S
+def sums(d, S):
+    if d == 1: yield (S,)
+    else:
+        for v in range(S + 1):
+            for x in sums(d - 1, S - v):
+                yield (v,) + x
 
-# Monomial of three variables (vec) with three powers
-def monomial(vec, powers):
-    return jnp.prod(vec**powers)
-monomials = vmap(monomial, in_axes=(None, 0))
+# construct 3-tuples of non-negative integers summing to odd S <= D
+def construct_powers(D):
+    pow = []
+    for S in range(1, D+1, 2):
+        for x in sums(3, S): 
+            pow.append(x)
+    return jnp.array(pow, dtype=jnp.int32)
 
-# Odd Polynomial measurement rule
-def PLHV_polynomial(degree):
-    pow = jnp.concatenate([powers(n) for n in range(1, degree+1, 2)], axis=0)
-    hidden_dim = pow.shape[0]
+# construct the odd monomials, sorted by degree, up to degree D in 3 variables
+def construct_monomials(D): 
+    pow = construct_powers(D)
+    funcs = jit( lambda x, j: jnp.prod(x**pow[j]) ) # monomials
+    funcs = vmap( funcs, in_axes=(None, 0) )
+    n = pow.shape[0] # number of monomials 
+    return jit( lambda x: funcs(x, jnp.arange(n)) ), n # vector valued function, (x, y, z) -> (x, y, z, x^3, x^2y,...,x^D,...,z^D)
+
+# Odd monomials measurement rule up to degree D
+def PLHV_polynomial(D):
+    monomials, hidden_dim = construct_monomials(D)
     def rule(measure, hidden_state):
-        return sigmoid(jnp.dot(hidden_state, monomials(measure, pow)))
+        return sigmoid(jnp.dot(hidden_state, monomials(measure)))
     return rule, hidden_dim
 
 
@@ -258,4 +268,3 @@ def sample2Dprojective(key, N_measures, N_spins):
 # N_hidden: Size of hidden state cloud
 # N_spins: Number of spins
 # hidden_dim: Dimension of the hidden state vectors (per spin)
-
