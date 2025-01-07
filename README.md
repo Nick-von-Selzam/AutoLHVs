@@ -30,4 +30,4 @@ matplotlib (3.8.0)
 For the full package lists (pip and conda) see the text files in the [Packages](Packages) folder.
 
 
-The [code](Code), copyright (c) 2024 Nick von Selzam, can be used under MIT license.
+The [code](Code), copyright (c) 2025 Nick von Selzam, can be used under [MIT license](LICENSE.txt).
