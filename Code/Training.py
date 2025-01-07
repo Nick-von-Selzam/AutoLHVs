@@ -111,9 +111,9 @@ autoLHV_v = vmap(autoLHV, in_axes=(*3*[0], *9*[None]))
 
 
 # Train with diffusion steps
-@partial(jit, static_argnums=(3, 4, 5, 6, 10, 11, 12, 13))
+@partial(jit, static_argnums=(3, 4, 5, 6, 8, 9, 10, 11, 12))
 def autoLHV_noise(key, hidden_states, quantum_state, 
-                N_measures, N_measures_test, N_steps, N_steps_noise, N_steps_finetune, noise, 
+                N_measures, N_measures_test, N_steps, N_steps_noise, noise, 
                 LHV_measurement_rule, QM_measurement_rule, distance_measure, sample, optimizer):
     
     '''
@@ -135,7 +135,6 @@ def autoLHV_noise(key, hidden_states, quantum_state,
                            = number of combinations of measurement options the loss function is averaged over per gradient descent step
                 N_measures_test = batch size for test loss evaluation (once, in the end)
                 N_steps = total number of gradient descent steps
-                N_steps_fine_tune: for the last N_steps_fine_tune gradient descent steps a 10x smaller learning_rate is used
                 N_steps_noise = number of gradient descent steps followed by a diffusion step, needs to be smaller or equal to N_steps
 
             Float hyper parameters:
@@ -186,4 +185,4 @@ def autoLHV_noise(key, hidden_states, quantum_state,
     return hidden_states, loss_values, test_loss
 
 # vectorize over key, hidden_states and quantum_state
-autoLHV_noise_v = vmap(autoLHV_noise, in_axes=(*3*[0], *11*[None]))
+autoLHV_noise_v = vmap(autoLHV_noise, in_axes=(*3*[0], *10*[None]))
