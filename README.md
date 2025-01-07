@@ -17,7 +17,7 @@ Measurement correlations in quantum systems can exhibit non-local behavior, a fu
 The [Examples](Code/Examples.ipynb) notebook shows how to easily apply the algorithm and optimize local hidden-variable (LHV) models for any desired state.
 
 
-We use Python (3.13.0). For the full package lists (pip and conda) see the text files in the [Packages](Packages) folder. Most importantly, we need numpy (2.1.3), sympy (1.13.3), jax (0.4.35) and optax (0.2.4).
+We use Python (3.13.0). For the full package lists (pip and conda) see the text files in the [Requirements](Requirements) folder. Most importantly, we need numpy (2.1.3), sympy (1.13.3), jax (0.4.35) and optax (0.2.4).
 
 
 The [code](Code), copyright (c) 2025 Nick von Selzam, can be used under [MIT license](LICENSE.txt).
